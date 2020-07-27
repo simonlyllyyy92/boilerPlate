@@ -1,17 +1,21 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {demoAction} from '../redux/reducer1/user.action'
+import {demoAction, sagaAction} from '../redux/userReducer/user.action'
 
 class User extends React.Component {
     updateUser = () => {
         this.props.setUser("updated User")
     }
 
+    sagaUpdateUser = () => {
+        this.props.setSagaUser('updated Saga User')
+    }
+
     render(){
         return (
             <div>
                 <h1>{this.props.currentUser}</h1>
-                <button onClick = {this.updateUser}>Testing User reducer</button>
+                <button onClick = {this.sagaUpdateUser}>Testing User reducer</button>
             </div>
         )
     }
@@ -22,7 +26,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    setUser: (user) =>dispatch(demoAction(user))
+    setUser: (user) =>dispatch(demoAction(user)),
+    setSagaUser: (user) => dispatch(sagaAction(user))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(User)

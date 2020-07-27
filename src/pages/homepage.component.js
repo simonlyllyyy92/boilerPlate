@@ -1,14 +1,15 @@
 import React from 'react'
 import Directory from '../component/directory.component'
 import Button from 'react-bootstrap/Button';
+import {HomePageContainer} from '../styles/styled-components'
 
 
 const HomePage = (props) => {
   return (
-    <div className = 'homepage'>
+    <HomePageContainer>
       <Directory />
       {/* <Button variant="primary">Primary</Button> */}
-    </div>
+    </HomePageContainer>
 )
 }
 

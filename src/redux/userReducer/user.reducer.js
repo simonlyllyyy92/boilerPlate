@@ -9,6 +9,11 @@ const userReducer= (state = INITIAL_STATE, action) => {
                 ...state,
                 currentUser: action.payload
             }
+        case 'SET_SAGA_USER_SUCCESS':
+            return {
+                ...state, 
+                currentUser: action.payload
+            }
         default: 
             return state;
     }
