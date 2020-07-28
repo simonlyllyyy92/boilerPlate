@@ -1,0 +1,22 @@
+.InnerContainer {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 540px;
+  flex-direction: column;
+}
+
+.InnerNumber {
+  text-align: center;
+}
+
+.ImageSize {
+  width: 400px;
+  height: 400px;
+  @media screen and (max-width: 760px) {
+    width: 200px;
+    height: 200px;
+  }
+}
